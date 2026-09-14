@@ -8,18 +8,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background: #0b1120;
   color: white;
-}
-
-html,
-body {
-  max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ================= NAVIGATION ================= */
