@@ -41,8 +41,8 @@ const skills = [
     i_class: 'fa-brands fa-php',
     description: 'Developing server-side applications and handling database interactions.'
   },{
-    name: 'SQL',
-    i_class: 'fa-solid fa-database',
+    name: 'MySQL',
+    i_class: 'devicon-mysql-plain-wordmark',
     description: 'Designing and managing databases for web applications.'
   },{
     name: 'JavaScript',
