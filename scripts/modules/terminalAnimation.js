@@ -35,10 +35,9 @@ const developer = {
   role: "Student & Web Developer",
 
   skills: [
-    "HTML",         "CSS",
-    "PHP",          "SQL",
-    "Python",       "Java",
-    "JavaScript",   "C++"
+    "HTML",         "CSS",      "PHP",
+    "SQL",          "Python",   "Java",
+    "JavaScript",   "C++",      "C#",
   ],
 
   passion: "Building Amazing Projects"
