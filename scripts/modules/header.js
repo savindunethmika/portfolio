@@ -32,9 +32,11 @@ export function toggleIntroScreen() {
   const introScreen = document.getElementById('introScreen');
   const enterPortfolio = document.getElementById('enterPortfolio');
 
+  document.body.style.overflowY = 'hidden';
+
   enterPortfolio.addEventListener('click', () => {
     introScreen.classList.add('hide');
-
+    document.body.style.overflowY = 'auto';
     setTimeout(() => {
       startTerminalAnimation();
     }, 500);
