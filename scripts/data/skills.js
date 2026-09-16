@@ -58,7 +58,7 @@ const skills = [
     description: 'Developing robust and scalable applications.'
   },{
     name: 'C++',
-    i_class: 'fa-solid fa-code',
+    i_class: 'devicon-cplusplus-plain',
     description: 'Learning programming fundamentals and problem solving.'
   },
 ].map((skillDetails) => {
