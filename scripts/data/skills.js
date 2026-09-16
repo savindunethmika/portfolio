@@ -60,6 +60,10 @@ const skills = [
     name: 'C++',
     i_class: 'devicon-cplusplus-plain',
     description: 'Learning programming fundamentals and problem solving.'
+  },{
+    name: 'C#',
+    i_class: 'devicon-csharp-plain',
+    description: 'Developing reliable software with object-oriented principles.'
   },
 ].map((skillDetails) => {
   return new Skill(skillDetails);
