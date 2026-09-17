@@ -126,6 +126,31 @@ header {
   margin-top: 30px;
 }
 
+/* ================= PROFILE PHOTO ================= */
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  padding: 4px;
+  background: #38bdf8;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 /* ================= BUTTONS ================= */
 
@@ -205,11 +230,6 @@ header {
 
 /* ================= CODE CARD ================= */
 
-.hero-card {
-  display: flex;
-  justify-content: center;
-}
-
 .code-window {
   width: 100%;
   max-width: 500px;
@@ -278,7 +298,7 @@ code {
 
   color: #38bdf8;
 
-  font-family: monospace;
+  font-family: "Courier New", monospace;
   font-size: 15px;
   line-height: 1.8;
 
@@ -304,6 +324,19 @@ code {
     opacity: 0;
   }
 
+}
+
+/* ASCII PHOTO */
+
+.ascii-photo {
+  font-size: 8px !important;
+  line-height: 1 !important;
+
+  text-align: center;
+
+  white-space: pre;
+
+  animation: photoReveal 1.5s ease forwards;
 }
 
 @keyframes photoReveal {
@@ -755,6 +788,11 @@ footer p {
     cursor: pointer;
     z-index: 1001;
     transition: 0.3s;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
   }
 
 }
