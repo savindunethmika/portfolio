@@ -371,7 +371,7 @@ code {
   }
 
   .ascii-photo {
-    font-size: 4px !important;
+    font-size: 6px !important;
   }
 
 }
@@ -1007,6 +1007,11 @@ footer p {
 .reveal-right.show {
   opacity: 1;
   transform: translateX(0);
+}
+
+.skill-card.scroll-reveal.show:hover,
+.project-card.scroll-reveal.show:hover {
+  transform: translateY(-8px);
 }
 
 /* Animation delays */
