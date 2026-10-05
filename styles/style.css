@@ -342,9 +342,9 @@ code {
   text-align: left;
   justify-content: center;
   white-space: pre;
-  width: fit-content;
+  /*width: fit-content;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto;*/
   animation: photoReveal 0.1s ease forwards;
 }
 
