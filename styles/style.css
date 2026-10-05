@@ -366,7 +366,7 @@ code {
 
 @media (max-width: 500px) {
   .ascii-photo {
-    font-size: clamp(4px, 1.6vw, 5px) !important;
+    font-size: clamp(4px, 1.0vw, 4px) !important;
     text-align: center;
     justify-content: center;
   }
