@@ -369,6 +369,9 @@ code {
     font-size: 4px !important;
     text-align: center;
     justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: pre;
   }
 
   .terminal-window {
