@@ -337,13 +337,13 @@ code {
 /* ASCII PHOTO */
 
 .ascii-photo {
-  font-size: 8px !important;
+  font-size: clamp(5px, 1.6vw, 8px) !important;
   line-height: 1 !important;
-
-  text-align: center;
-
+  text-align: left;
   white-space: pre;
-
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   animation: photoReveal 0.1s ease forwards;
 }
 
@@ -377,11 +377,6 @@ code {
   #terminalOutput {
     font-size: 12px;
   }
-
-  .ascii-photo {
-    font-size: 4px !important;
-  }
-
 }
 
 
@@ -533,18 +528,32 @@ code {
 }
 
 .certificate-image {
-  height: 200px;
+  height: 180px;
   background: #1e293b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .certificate-image img {
-  height: 200px;
-  width: 100%;
-  object-fit: fill;
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  display: block; 
+} 
+
+.certificate-image-fallback { 
+  width: 100%; 
+  height: 100%; 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+} 
+
+.certificate-image-fallback i { 
+  font-size: 70px; 
+  color: #38bdf8; 
 }
+
 .certificate-content {
   padding: 15px;
   padding-left: 25px;
@@ -628,14 +637,28 @@ code {
 .project-image {
   height: 180px;
   background: #1e293b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
-.project-image i {
-  font-size: 60px;
-  color: #38bdf8;
+.project-image img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  display: block; 
+} 
+
+.project-image-fallback { 
+  width: 100%; 
+  height: 100%; 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+} 
+
+.project-image-fallback i { 
+  font-size: 70px; 
+  color: #38bdf8; 
 }
 
 .project-content {
