@@ -35,7 +35,15 @@ export function getCertificates() {
     certificateHTML += `
       <div class="certificate-card scroll-reveal">
         <div class="certificate-image">
-          <img src="${certificate.image}">
+          <img
+            src="${certificate.image}"
+            alt="${certificate.name}"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+
+          <div class="certificate-image-fallback">
+            <i class="fa-solid fa-award"></i>
+          </div>
         </div>
 
         <div class="certificate-content">
