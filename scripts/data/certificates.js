@@ -40,6 +40,8 @@ export function getCertificates() {
 
         <div class="certificate-content">
           <h3>${certificate.name}</h3>
+        </div>
+        <div class="certificate-content2">
           <p>
             ${certificate.description}
           </p>
@@ -78,13 +80,31 @@ export function getCertificates() {
 const cetificates = [
   {
     id: 1,
-    name: 'certificate-01',
-    image: 'images/certificates/test.png',
-    description: 'This is a test picture and this is how it looks.he he. 1',
-    org: 'Orgenization1',
-    date: '2026 September',
-    languages: ['python'],
-    link: ''
+    name: 'Programming with Python',
+    image: 'images/certificates/python workshop-0001.jpg',
+    description: 'Certificate for the patricipation to Programming with Python Free Two days workshop.',
+    org: 'SOUTHERN IRAA (PVT) LTD.',
+    date: '2024 February 26,27',
+    languages: ['Python'],
+    link: 'https://www.southerniraa.lk/workshop/pythondata-science/exam-results'
+  },{
+    id: 2,
+    name: 'Web Development',
+    image: 'images/certificates/web desing-0001.jpg',
+    description: 'Certificate for the patricipation to Web Design & Development Free Two days workshop.',
+    org: 'SOUTHERN IRAA (PVT) LTD.',
+    date: '2025 January 25,26',
+    languages: ['HTML', 'CSS'],
+    link: '#'
+  },{
+    id: 3,
+    name: 'Creative Design',
+    image: 'images/certificates/Graphic Desing-001.jpg',
+    description: 'Certificate for the patricipation to Creative Design Free Two days workshop.',
+    org: 'SOUTHERN IRAA (PVT) LTD.',
+    date: '2025 January 20,21',
+    languages: ['Adobe Photoshop'],
+    link: 'https://www.southerniraa.lk/workshop/graphic-designing/exam-results-s3'
   },
 ].map((certificateDetails) => {
   return new Certificate(certificateDetails);

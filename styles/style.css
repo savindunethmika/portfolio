@@ -26,7 +26,8 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(11, 17, 32, 0.95);
+  background: rgba(11, 17, 32, 0.75);
+  /* background: linear-gradient(rgba(11, 17, 32, 0.95), transparent); */
   backdrop-filter: blur(10px);
 }
 
@@ -64,12 +65,14 @@ header {
 .nav-links a {
   text-decoration: none;
   color: #cbd5e1;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 
 .nav-links a:hover {
   color: #38bdf8;
+  text-shadow: 0 0 10px #2ba0ff;
 }
 
 
@@ -227,6 +230,11 @@ header {
   transform: translateY(-4px);
 }
 
+.skill-card.scroll-reveal.show:hover,
+.certificate-card.scroll-reveal.show:hover,
+.project-card.scroll-reveal.show:hover {
+  transform: translateY(-8px);
+}
 
 /* ================= CODE CARD ================= */
 
@@ -336,7 +344,7 @@ code {
 
   white-space: pre;
 
-  animation: photoReveal 1.5s ease forwards;
+  animation: photoReveal 0.1s ease forwards;
 }
 
 @keyframes photoReveal {
@@ -439,6 +447,12 @@ code {
   background: #111827;
   border: 1px solid #1e293b;
   border-radius: 10px;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateX(-8px);
+  border-color: #38bdf8;
 }
 
 .info-card i {
@@ -529,17 +543,34 @@ code {
 .certificate-image img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
-
 .certificate-content {
+  padding: 15px;
+  padding-left: 25px;
+}
+.certificate-content2 {
   padding: 25px;
+  padding-top: 5px;
+  background-color: #08101d;
+  border-left: 5px solid #37a2ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0b1120;
+  padding-left: 20px;
+  margin: 15px;
+  margin-top: 5px;
 }
 
-.certificate-content p {
+.certificate-content2 p {
   color: #94a3b8;
   margin: 15px 0;
   line-height: 1.6;
+}
+
+
+.certificate-issue h4 {
+  color: #357de2;
+  font-weight: bold;
 }
 
 .certificate-issue p {
@@ -658,12 +689,25 @@ code {
   line-height: 1.7;
 }
 
+.contact-item-container {
+  background-color: #08101d;
+  border-left: 5px solid #badbf7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0b1120;
+  padding: 10px;
+  padding-left: 20px;
+  transition: 0.3s;
+}
+
 .contact-item {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-top: 20px;
   color: #cbd5e1;
+}
+
+.contact-item:first-child {
+  margin-bottom: 5px;
 }
 
 .contact-item i {
@@ -832,8 +876,12 @@ footer p {
   align-items: center;
   text-align: center;
   z-index: 9999;
-  transition: opacity 0.8s ease,
-              visibility 0.8s ease;
+  /* when hide it fading */
+  /* transition: opacity 0.8s ease,
+              visibility 0.8s ease; */
+  /* going up */
+  transform: translateY(0);
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .intro-content {
@@ -896,8 +944,12 @@ footer p {
 /* Hide Intro */
 
 .intro-screen.hide {
-  opacity: 0;
-  visibility: hidden;
+  /* fading */
+  /* opacity: 0;
+  visibility: hidden; */
+  /* going up */
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 
@@ -1007,11 +1059,6 @@ footer p {
 .reveal-right.show {
   opacity: 1;
   transform: translateX(0);
-}
-
-.skill-card.scroll-reveal.show:hover,
-.project-card.scroll-reveal.show:hover {
-  transform: translateY(-8px);
 }
 
 /* Animation delays */

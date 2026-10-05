@@ -3,16 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Savindu Nethmika is a student and web developer from Sri Lanka, specializing in modern web development and software projects."
+  >
+  <meta
+    name="keywords"
+    content="Savindu Nethmika, Savindu Nethmika developer, Savindu Nethmika Sri Lanka, web developer Sri Lanka, student developer, software developer, web development"
+  >
+  <meta name="author" content="Savindu Nethmika">
+  <meta name="robots" content="index, follow">
+  <meta
+    name="google-site-verification"
+    content="YOUR_GOOGLE_VERIFICATION_CODE"
+  >
 
-  <title>Savindu Nethmika</title>
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="Savindu Nethmika | Student & Web Developer"
+  >
+
+  <meta
+    property="og:description"
+    content="Personal portfolio of Savindu Nethmika, a student and web developer from Sri Lanka."
+  >
+
+  <meta
+    property="og:url"
+    content="https://savindunethmika.netlify.app/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Savindu Nethmika"
+  >
+
+  <meta
+    property="og:image"
+    content="https://savindunethmika.netlify.app/images/profile.jpg"
+  >
+
+  <!-- Twitter / X Sharing -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Savindu Nethmika | Student & Web Developer"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Personal portfolio of Savindu Nethmika, a student and web developer from Sri Lanka."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://savindunethmika.netlify.app/images/logo.png"
+  >
+
+  <!-- Profile / Person Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://savindunethmika.netlify.app/#profile",
+    "url": "https://savindunethmika.netlify.app/",
+    "name": "Savindu Nethmika | Student & Web Developer",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://savindunethmika.netlify.app/#person",
+      "name": "Savindu Nethmika",
+      "url": "https://savindunethmika.netlify.app/",
+      "jobTitle": "Student & Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Matara",
+        "addressCountry": "LK"
+      },
+      "sameAs": [
+        "https://github.com/DevilSavi",
+        "https://linkedin.com/in/savindu-nethmika"
+      ]
+    }
+  }
+  </script>
+
+  <title>Savindu Nethmika | Student & Web Developer</title>
 
   <link rel="website icon" href="images/logo.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="canonical" href="https://savindunethmika.netlify.app/">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Add this in your <head> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
 </head>
 
 <body>
@@ -48,6 +138,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -106,6 +197,7 @@
 
 
     <div class="hero-card">
+
       <div class="code-window">
         <div class="window-header">
           <span></span>
@@ -123,7 +215,7 @@
 
   <!-- About Section -->
 
-  <section id="about" class="section">
+  <section id="about" class="section dark-section">
 
     <div class="section-title scroll-reveal">
       <p>GET TO KNOW ME</p>
@@ -146,7 +238,7 @@
         <a href="#contact" class="btn primary-btn">
           Let's Work Together
         </a>
-        <a href="documents/Savindu_Nethmika_CV.pdf"
+        <a href="documents/Savindu-Nethmika-CV.pdf"
           class="btn secondary-btn"
           download>
           <i class="fa-solid fa-download"></i>
@@ -180,7 +272,7 @@
 
   <!-- Skills Section -->
 
-  <section id="skills" class="section dark-section">
+  <section id="skills" class="section">
 
     <div class="section-title scroll-reveal">
       <p>MY TECHNOLOGIES</p>
@@ -189,6 +281,20 @@
 
     <div class="skills-container js-skills-container">
     </div>
+  </section>
+
+  <!-- Certificates Section -->
+
+  <section id="certificates" class="section dark-section">
+
+    <div class="section-title scroll-reveal">
+      <p>MY ARCHIEVEMENTS</p>
+      <h2>Certificates</h2>
+    </div>
+
+    <div class="certificate-container js-certificate-container">
+    </div>
+
   </section>
 
   <!-- Projects Section -->
@@ -226,17 +332,20 @@
           Feel free to contact me.
         </p>
 
+        <div class="contact-item-container">
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>savindunj@gmail.com</span>
+          </div>
 
-        <div class="contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>savindunj@gmail.com</span>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot">.</i>
+            <span> Sri Lanka</span>
+          </div>          
         </div>
 
 
-        <div class="contact-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Sri Lanka</span>
-        </div>
 
       </div>
 

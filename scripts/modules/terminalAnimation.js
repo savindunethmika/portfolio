@@ -22,14 +22,14 @@ export function startTerminalAnimation() {
 
     terminal.classList.add('cursor');
 
-    await typeText("> INITIALIZING SYSTEM...\n", 35);
-    await sleep(500);
+    await typeText("> INITIALIZING SYSTEM...\n", 25);
+    await sleep(400);
     await typeText("> CONNECTING TO PORTFOLIO...\n", 25);
     await sleep(400);
     await typeText("> ACCESSING DEVELOPER DATA...\n", 25);
-    await sleep(500);
-    await typeText("> ACCESS GRANTED\n\n", 30);
-    await sleep(800);
+    await sleep(400);
+    await typeText("> ACCESS GRANTED\n\n", 25);
+    await sleep(400);
 
     /* =========================
        STEP 2
@@ -42,7 +42,6 @@ export function startTerminalAnimation() {
     terminal.classList.add('ascii-photo');
 
     const asciiPhoto = `
-
 ππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππ
 ππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππππ
 ππππππππππππππππππππππππππππππππππππππππππππππππππ+πππππππππππππππππππππππππππππππππππππππππππππππππ
@@ -97,11 +96,9 @@ export function startTerminalAnimation() {
 πππππππππππππππππ+π++++++πππ+++++++ππ+++π+++πππ++π++++++++++++++++π+πππ+ππππππππππππππππππππππππππππ
 πππππππππππππππππ+++ππππππππππ+π+++++++++++++++++++++++++++++π+++πππππππππππππππππππππππππππππππππππ
 πππππππππππππππππ+++++π+++ππππππππ+++++++++++π++π+++++++++πππ++ππππππππππππππππππ+ππππππππππππππππππ
-πππππππππππππππππ++ππ++++ππππππππππππππππππππππππππππππππππππππππππππππππππππππππππ+ππππππππππππππππ
+πππππππππππππππππ++ππ++++ππππππππππππππππππππππππππππππππππππππππππππππππππππππππππ+ππππππππππππππππ`;
 
-`;
-
-    await typeText(asciiPhoto, 1);
+    await typeText(asciiPhoto, 0.1);
     terminal.classList.add('cursor');
   };
 
