@@ -241,11 +241,51 @@ header {
 .code-window {
   width: 100%;
   max-width: 500px;
-  overflow: hidden;
-  border: 1px solid #1e293b;
+  position: relative;
   border-radius: 12px;
   background: #111827;
+  border: 1px solid #1e293b;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  isolation: isolate;
+}
+
+/* Traveling cyan light */
+.code-window::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+
+  background: conic-gradient(
+    from var(--deg),
+    transparent 0deg,
+    transparent 60deg,
+    #38bdf8 90deg,
+    transparent 180deg,
+    transparent 240deg,
+    #38bdf8 270deg,
+    transparent 360deg
+  );
+
+  z-index: -1;
+  filter: blur(6px);
+  animation: rotateLight 3s linear infinite;
+}
+
+/* Hide the gradient itself behind the window */
+.code-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: #111827;
+  z-index: -1;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
 .window-header {
@@ -253,6 +293,7 @@ header {
   display: flex;
   gap: 8px;
   background: #1e293b;
+  border-radius: 12px 12px 0 0;
 }
 
 .window-header span {
@@ -932,6 +973,16 @@ footer p {
 /* =========================================================
    ANIMATIONS
    ========================================================= */
+
+@keyframes rotateLight {
+  from {
+    --deg: 0deg;
+  }
+
+  to {
+    --deg: 360deg;
+  }
+}
 
 @keyframes blink {
   0%,
