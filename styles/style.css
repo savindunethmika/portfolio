@@ -1142,3 +1142,162 @@ footer p {
     font-size: 12px;
   }
 }
+
+/* =========================================================
+   MOBILE CARD CAROUSELS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* -------------------------------------------------------
+     CAROUSEL CONTAINERS
+     ------------------------------------------------------- */
+
+  .skills-container,
+  .certificate-container,
+  .projects-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /*
+      IMPORTANT:
+      Allow both vertical page scrolling and
+      horizontal card swiping.
+    */
+    touch-action: pan-y pan-x;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .skills-container::-webkit-scrollbar,
+  .certificate-container::-webkit-scrollbar,
+  .projects-container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE CARDS
+     ------------------------------------------------------- */
+
+  .skills-container .skill-card,
+  .certificate-container .certificate-card,
+  .projects-container .project-card {
+
+    flex-shrink: 0;
+
+    min-width: 0;
+
+    scroll-snap-align: start;
+
+    /*
+      Disable vertical scroll-reveal movement inside
+      horizontal carousels.
+
+      Otherwise a card can appear slightly lower
+      when you swipe to it.
+    */
+    opacity: 1;
+    transform: none !important;
+  }
+
+
+  /* Card widths */
+
+  .skills-container .skill-card {
+    flex-basis: calc(100% - 45px);
+  }
+
+  .certificate-container .certificate-card,
+  .projects-container .project-card {
+    flex-basis: calc(100% - 35px);
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE HOVER
+     ------------------------------------------------------- */
+
+  /*
+    Mobile devices don't really have hover.
+    More importantly, this prevents the card from
+    moving outside the carousel and being clipped.
+  */
+
+  .skills-container .skill-card:hover,
+  .certificate-container .certificate-card:hover,
+  .projects-container .project-card:hover {
+    transform: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     PAGINATION DOTS
+     ------------------------------------------------------- */
+
+  .carousel-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 22px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #334155;
+
+    cursor: pointer;
+
+    transition:
+      width 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .carousel-dot.active {
+    width: 22px;
+
+    border-radius: 10px;
+
+    background: #38bdf8;
+
+    box-shadow:
+      0 0 10px rgba(56, 189, 248, 0.45);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HIDE PAGINATION DOTS ON DESKTOP
+   --------------------------------------------------------- */
+
+@media (min-width: 601px) {
+
+  .carousel-dots {
+    display: none;
+  }
+
+}
