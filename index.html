@@ -43,7 +43,7 @@
 
   <meta
     property="og:image"
-    content="https://savindunethmika.netlify.app/images/profile.jpg"
+    content="https://savindunethmika.netlify.app/images/logo.png"
   >
 
   <!-- Twitter / X Sharing -->
@@ -400,8 +400,33 @@
 
   </footer>
 
-
   <script src="scripts/script.js" type="module"></script>
+  <!-- Profile / Person Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://savindunethmika.netlify.app/#profile",
+    "url": "https://savindunethmika.netlify.app/",
+    "name": "Savindu Nethmika | Student & Web Developer",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://savindunethmika.netlify.app/#person",
+      "name": "Savindu Nethmika",
+      "url": "https://savindunethmika.netlify.app/",
+      "jobTitle": "Student & Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Matara",
+        "addressCountry": "LK"
+      },
+      "sameAs": [
+        "https://github.com/DevilSavi",
+        "https://linkedin.com/in/savindu-nethmika"
+      ]
+    }
+  }
+  </script>
 
 </body>
 </html>
