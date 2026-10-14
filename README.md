@@ -8,7 +8,7 @@
 
 <br>
 
-![Profile Views](https://komarev.com/ghpvc/?username=DevilSavi\&style=for-the-badge\&color=0ea5e9\&label=PROFILE+VIEWS)
+![Profile Views](https://komarev.com/ghpvc/?username=savindunethmika\&style=for-the-badge\&color=0ea5e9\&label=PROFILE+VIEWS)
 
 </div>
 
@@ -18,13 +18,13 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats.shion.dev/api?username=DevilSavi&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" height="165">
+<img src="https://github-readme-stats.shion.dev/api?username=savindunethmika&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" height="165">
 
-<img src="https://streak-stats.demolab.com/?user=DevilSavi&theme=tokyonight&hide_border=true" height="165">
+<img src="https://streak-stats.demolab.com/?user=savindunethmika&theme=tokyonight&hide_border=true" height="165">
 
 <br><br>
 
-<img src="https://github-readme-stats.shion.dev/api/top-langs/?username=DevilSavi&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact" height="165">
+<img src="https://github-readme-stats.shion.dev/api/top-langs/?username=savindunethmika&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact" height="165">
 
 </div>
 
