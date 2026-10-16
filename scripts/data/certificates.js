@@ -90,7 +90,7 @@ const cetificates = [
     id: 1,
     name: 'Programming with Python',
     image: 'images/certificates/python workshop-0001.jpg',
-    description: 'Certificate for the patricipation to Programming with Python Free Two days workshop.',
+    description: 'Certificate of Participation for the Free Two-Day Python Programming Workshop',
     org: 'SOUTHERN IRAA (PVT) LTD.',
     date: '2024 February 26,27',
     languages: ['Python'],
@@ -99,16 +99,16 @@ const cetificates = [
     id: 2,
     name: 'Web Development',
     image: 'images/certificates/web desing-0001.jpg',
-    description: 'Certificate for the patricipation to Web Design & Development Free Two days workshop.',
+    description: 'Certificate of Participation for the Free Two-Day Web Design & Development Workshop',
     org: 'SOUTHERN IRAA (PVT) LTD.',
     date: '2025 January 25,26',
     languages: ['HTML', 'CSS'],
-    link: '#'
+    link: '404.html'
   },{
     id: 3,
     name: 'Creative Design',
     image: 'images/certificates/Graphic Desing-001.jpg',
-    description: 'Certificate for the patricipation to Creative Design Free Two days workshop.',
+    description: 'Certificate of Participation for the Free Two-Day Creative Design Workshop',
     org: 'SOUTHERN IRAA (PVT) LTD.',
     date: '2025 January 20,21',
     languages: ['Adobe Photoshop'],
