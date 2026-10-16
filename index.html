@@ -140,6 +140,7 @@
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -201,17 +202,65 @@
 
     <div class="hero-card">
 
-      <div class="code-window">
-        <div class="window-header">
-          <span></span>
-          <span></span>
-          <span></span>
+      
+  <div class="code-window">
+
+    <div class="window-header">
+      <div class="window-controls" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <button
+        class="photo-toggle"
+        id="photoToggle"
+        type="button"
+        aria-pressed="false"
+        aria-label="Show my real photo"
+      >
+        <i class="fa-regular fa-image"></i>
+        <span>View Photo</span>
+      </button>
+    </div>
+
+    <div class="flip-scene">
+      <div class="flip-card" id="profileFlipCard">
+
+        <!-- FRONT: Your existing ASCII portrait -->
+        <div class="flip-face flip-front">
+          <div class="terminal-content">
+            <pre id="terminalOutput"></pre>
+          </div>
+          <div class="face-caption">
+            <span class="status-dot"></span>
+            <span>ASCII_PROFILE.exe</span>
+          </div>
         </div>
 
-        <div class="terminal-content">
-          <pre id="terminalOutput"></pre>
+        <!-- BACK: Your real photo -->
+        <div class="flip-face flip-back">
+          <div class="photo-frame">
+            <img
+              src="images/profile_photo.png"
+              alt="Portrait of Savindu Nethmika"
+              class="real-profile-photo"
+            >
+            <div class="photo-overlay">
+              <span>IDENTITY VERIFIED</span>
+              <span>Developer Profile</span>
+            </div>
+          </div>
+
+          <div class="face-caption">
+            <span class="status-dot"></span>
+            <span>PROFILE.jpg</span>
+          </div>
         </div>
+
       </div>
+    </div>
+  </div>
     </div>
   </section>
 
@@ -271,7 +320,90 @@
       </div>
     </div>
   </section>
+  
+  <!-- Education Section -->
 
+  <section id="education" class="section dark-section">
+
+    <div class="section-title scroll-reveal">
+      <p>MY JOURNEY</p>
+      <h2>Education</h2>
+    </div>
+
+    <div class="education-timeline">
+
+      <!-- O/L -->
+      <article class="education-item scroll-reveal">
+        <div class="education-marker">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="education-card">
+          <div class="education-card-header">
+            <span class="education-label">ORDINARY LEVEL</span>
+            <span class="education-status">Completed</span>
+          </div>
+
+          <h3>St. Thomas College, Matara</h3>
+          <p class="education-qualification">
+            G.C.E. Ordinary Level (O/L)
+          </p>
+
+          <div class="education-result">
+            <span><strong>7</strong> A passes</span>
+            <span><strong>2</strong> B passes</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- A/L -->
+      <article class="education-item scroll-reveal">
+        <div class="education-marker">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div class="education-card">
+          <div class="education-card-header">
+            <span class="education-label">ADVANCED LEVEL</span>
+            <span class="education-status">Completed</span>
+          </div>
+
+          <h3>St. Thomas College, Matara</h3>
+          <p class="education-qualification">
+            G.C.E. Advanced Level (A/L)
+          </p>
+
+          <div class="education-result">
+            <span><strong>2</strong> A passes</span>
+            <span><strong>1</strong> B pass</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- University -->
+      <article class="education-item scroll-reveal">
+        <div class="education-marker">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+
+        <div class="education-card">
+          <div class="education-card-header">
+            <span class="education-label">HIGHER EDUCATION</span>
+          </div>
+
+          <h3>University of Colombo School of Computing</h3>
+          <p class="education-qualification">
+            Computer Science Degree
+          </p>
+
+          <p class="education-note">
+            Undergraduate student.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
   <!-- Skills Section -->
 
@@ -354,9 +486,10 @@
 
 
       <form 
+        id="contactForm"
         action="https://formspree.io/f/myeybpwd"
         method="POST"
-        class="contact-form reveal-right scroll-reveal"
+        class="contact-form reveal-left scroll-reveal"
       >
 
         <input
@@ -379,6 +512,7 @@
         <button class="btn primary-btn" type="submit">
           Send Message
         </button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
 
       </form>
     </div>
@@ -403,36 +537,8 @@
 
   </footer>
 
+
   <script src="scripts/script.js" type="module"></script>
-  <!-- Profile / Person Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": "https://savindunethmika.netlify.app/#profile",
-    "url": "https://savindunethmika.netlify.app/",
-    "name": "Savindu Nethmika | Student & Web Developer",
-    "mainEntity": {
-      "@type": "Person",
-      "@id": "https://savindunethmika.netlify.app/#person",
-      "name": "Savindu Nethmika",
-      "url": "https://savindunethmika.netlify.app/",
-      "jobTitle": "Student & Web Developer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Matara",
-        "addressCountry": "LK"
-      },
-      "sameAs": [
-        "https://github.com/DevilSavi",
-        "https://linkedin.com/in/savindu-nethmika",
-        "https://facebook.com/savindu.n.j.2005",
-        "https://instagram.com/savi.n.j._06",
-        "https://youtube.com/@Devil_SAVI"
-      ]
-    }
-  }
-  </script>
 
 </body>
 </html>
