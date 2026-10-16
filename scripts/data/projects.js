@@ -5,7 +5,8 @@ export class Project {
   name;
   description;
   languages;
-  link;
+  source;
+  demo_link;
 
   constructor(projectDetails) {
     this.id = projectDetails.id;
@@ -14,7 +15,8 @@ export class Project {
     this.name = projectDetails.name;
     this.description = projectDetails.description;
     this.languages = projectDetails.languages;
-    this.link = projectDetails.link;
+    this.source = projectDetails.source;
+    this.demo_link = projectDetails.demo_link;
   };
 
   getTechs() {
@@ -36,6 +38,54 @@ export class Project {
       return '<i class="fa-solid fa-calculator"></i>';
     } else if (this.icon === 'gamepad') {
       return '<i class="fa-solid fa-gamepad"></i>';
+    }
+  }
+
+  renderButtons() {
+    if (this.source && this.demo_link) {
+      return `
+        <div class="project-view-button">
+          <button class="btn2 primary-btn" style="margin: 10px 10px;">
+            <a
+              href="${this.source}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn primary-btn project-btn"
+            >
+              <i class="fa-brands fa-github"></i>
+              Source Code
+            </a>
+          </button>
+          
+          <button class="btn2 primary-btn" style="margin: 10px 10px;">
+            <a
+              href="${this.demo_link}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn primary-btn project-btn"
+            >
+              <i class="fa-solid fa-eye"></i>
+              Live Demo
+            </a>
+          </button>
+        </div>
+      `;
+    } else if (this.source) {
+      return `
+      <div class="project-view-button">
+          <button class="btn2 primary-btn" style="margin: 10px 10px;">
+            <a
+              href="${this.source}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn primary-btn project-btn"
+            >
+              <i class="fa-brands fa-github"></i>
+              Source Code
+            </a>
+          </button>
+        </div>
+      `;
     }
   }
 };
@@ -71,19 +121,7 @@ export function getProjects() {
           </div>
         </div>
 
-        <div class="project-view-button">
-          <button class="btn2 primary-btn" style="margin: 10px 10px;">
-            <a
-              href="${project.link}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn primary-btn project-btn"
-            >
-              <i class="fa-brands fa-github"></i>
-              View Project
-            </a>
-          </button>
-        </div>
+        ${project.renderButtons()}
       </div>
     `;
 });
@@ -102,7 +140,7 @@ const projects = [
     name: 'Grocery Store App',
     description: 'A web application for managing products, orders and grocery store operations.',
     languages: ['HTML', 'CSS', 'Python', 'MySQL'],
-    link: 'https://github.com/savindunethmika/grocery_store_app'
+    source: 'https://github.com/savindunethmika/grocery_store_app',
   },
   {
     id: 2,
@@ -111,7 +149,8 @@ const projects = [
     name: 'Amazon Clone',
     description: 'An e-commerce website with shopping cart,  checkout and order tracking functionality.',
     languages: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/savindunethmika/amazon_clone'
+    source: 'https://github.com/savindunethmika/amazon_clone',
+    demo_link: 'https://amazonclonebysavindu.netlify.app/'
   },
   {
     id: 3,
@@ -120,7 +159,8 @@ const projects = [
     name: 'Calculator App',
     description: 'A simple calculator application beautifully designed with basic arithmetic operations.',
     languages: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/savindunethmika/Calculator-js'
+    source: 'https://github.com/savindunethmika/Calculator-js',
+    demo_link: 'https://calculatorjsbysavindu.netlify.app/'
   },
   {
     id: 4,
@@ -129,7 +169,8 @@ const projects = [
     name: 'Rock-Paper-Scissors Game',
     description: 'A simple implementation of the classic Rock-Paper-Scissors game using HTML, CSS, and JavaScript.',
     languages: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/savindunethmika/rock-paper-scissors-js'
+    source: 'https://github.com/savindunethmika/rock-paper-scissors-js',
+    demo_link: 'https://rpsjsbysavindu.netlify.app/'
   },
   {
     id: 5,
@@ -138,7 +179,7 @@ const projects = [
     name: 'Zelda Python Game',
     description: 'A 2D game developed using Python and Pygame with enemies and player mechanics.',
     languages: ['Python', 'Pygame'],
-    link: 'https://github.com/savindunethmika/Zelda_game_python'
+    source: 'https://github.com/savindunethmika/Zelda_game_python',
   }
 ].map((projectDetails) => {
   return new Project(projectDetails);
