@@ -1,26 +1,48 @@
-const form = document.querySelector(".contact-form");
+const contactForm = document.querySelector('#contactForm');
+const submitBtn = contactForm.querySelector('button[type="submit"]');
+const formStatus = document.querySelector('#formStatus');
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalBtnText = submitBtn.innerText;
-  submitBtn.innerText = "Sending...";
-  submitBtn.disabled = true;
+contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-  const response = await fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  });
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
 
-  if (response.ok) {
-    alert("Thank you! Your message has been sent successfully.");
-    form.reset();
-  } else {
-    alert("Oops! Something went wrong. Please try again.");
-  }
+    formStatus.textContent = '';
+    formStatus.className = '';
+    formStatus.setAttribute('role', 'status');
 
-  submitBtn.innerText = originalBtnText;
-  submitBtn.disabled = false;
+    try {
+        const response = await fetch('YOUR_EXISTING_ENDPOINT', {
+            method: 'POST',
+            body: new FormData(contactForm)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Request failed: ${response.status}`);
+        }
+
+        // Use this only if your endpoint returns JSON.
+        const result = await response.json();
+
+        if (result.success) {
+            formStatus.textContent = 'Message sent successfully!';
+            formStatus.classList.add('success');
+            contactForm.reset();
+        } else {
+            throw new Error('Message submission failed.');
+        }
+
+    } catch (error) {
+        console.error('Contact form error:', error);
+
+        formStatus.textContent =
+            'Unable to send your message. Please check your connection and try again.';
+
+        formStatus.classList.add('error');
+
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    }
 });
