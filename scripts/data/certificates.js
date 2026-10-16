@@ -68,7 +68,6 @@ export function getCertificates() {
           <button class="btn2 primary-btn" style="margin: 10px 10px;">
             <a
               href="${certificate.link}"
-              target="_blank"
               rel="noopener noreferrer"
               class="btn primary-btn project-btn"
             >
