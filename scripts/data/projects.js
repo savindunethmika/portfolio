@@ -150,7 +150,7 @@ const projects = [
     description: 'An e-commerce website with shopping cart,  checkout and order tracking functionality.',
     languages: ['HTML', 'CSS', 'JavaScript'],
     source: 'https://github.com/savindunethmika/amazon_clone',
-    demo_link: 'https://amazonclonebysavindu.netlify.app/'
+    demo_link: 'https://savindunethmika-amazon-clone.pages.dev/'
   },
   {
     id: 3,
@@ -160,7 +160,7 @@ const projects = [
     description: 'A simple calculator application beautifully designed with basic arithmetic operations.',
     languages: ['HTML', 'CSS', 'JavaScript'],
     source: 'https://github.com/savindunethmika/Calculator-js',
-    demo_link: 'https://calculatorjsbysavindu.netlify.app/'
+    demo_link: 'https://savindunethmika-calculator-js.pages.dev/'
   },
   {
     id: 4,
@@ -170,7 +170,7 @@ const projects = [
     description: 'A simple implementation of the classic Rock-Paper-Scissors game using HTML, CSS, and JavaScript.',
     languages: ['HTML', 'CSS', 'JavaScript'],
     source: 'https://github.com/savindunethmika/rock-paper-scissors-js',
-    demo_link: 'https://rpsjsbysavindu.netlify.app/'
+    demo_link: 'https://savindunethmika-rock-paper-scissors-js.pages.dev/'
   },
   {
     id: 5,
