@@ -30,15 +30,14 @@ export class Project {
   };
 
   getIcon() {
-    if (this.icon === 'shoppingCart') {
-      return '<i class="fa-solid fa-cart-shopping"></i>';
-    } else if (this.icon === 'amazon') {
-      return '<i class="fa-brands fa-amazon"></i>';
-    } else if (this.icon === 'calculator') {
-      return '<i class="fa-solid fa-calculator"></i>';
-    } else if (this.icon === 'gamepad') {
-      return '<i class="fa-solid fa-gamepad"></i>';
+    const webicons = {
+      'shoppingCart' : '<i class="fa-solid fa-cart-shopping"></i>',
+      'amazon'       : '<i class="fa-brands fa-amazon"></i>',
+      'calculator'   : '<i class="fa-solid fa-calculator"></i>',
+      'gamepad'      : '<i class="fa-solid fa-gamepad"></i>'
     }
+
+    return webicons[this.icon];
   }
 
   renderButtons() {
