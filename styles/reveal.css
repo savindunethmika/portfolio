@@ -1,0 +1,33 @@
+/* =========================================================
+   SCROLL REVEAL
+   Load AFTER sections.css: on cards this transition must win
+   over the cards' own `transition: 0.3s`.
+   ========================================================= */
+
+.scroll-reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.scroll-reveal {
+  transform: translateY(50px);
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.scroll-reveal.show,
+.reveal-left.show,
+.reveal-right.show {
+  opacity: 1;
+  transform: none;
+}

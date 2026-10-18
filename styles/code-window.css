@@ -1,0 +1,345 @@
+/* =========================================================
+   CODE WINDOW — the whole window (frame, glow, both faces)
+   flips as one 3D object. Front = ASCII, back = real photo.
+
+   3D rule of thumb: every ancestor between the rotating
+   element and the faces must keep `transform-style: preserve-3d`,
+   and none may use overflow / isolation / filter, or the 3D
+   context is flattened and the back face never shows.
+   ========================================================= */
+
+.code-window {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #111827;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+  transform: perspective(1200px) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.code-window.is-flipped {
+  transform: perspective(1200px) rotateY(180deg);
+}
+
+/* Traveling cyan light */
+.code-window::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+  background: conic-gradient(
+    from var(--deg),
+    transparent 0deg,
+    transparent 60deg,
+    #38bdf8 90deg,
+    transparent 180deg,
+    transparent 240deg,
+    #38bdf8 270deg,
+    transparent 360deg
+  );
+  z-index: -1;
+  filter: blur(6px);
+  animation: rotateLight 3s linear infinite;
+}
+
+/* Solid backing that hides the gradient behind the window */
+.code-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: #111827;
+  z-index: -1;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotateLight {
+  from { --deg: 0deg; }
+  to   { --deg: 360deg; }
+}
+
+/* ---------- Flip container & faces ---------- */
+
+.flip-scene {
+  width: 100%;
+  height: 500px;
+  transform-style: preserve-3d;
+  border-radius: 0 0 12px 12px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* translateZ lifts each face 1px off the glow/backing plane so they
+   never z-fight; it points outward on both sides of the window. */
+.flip-front {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+.flip-back {
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+/* ---------- Window header ---------- */
+
+.window-header {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #1e293b;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.window-controls span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+.window-controls span:nth-child(1) { background: #ffffff; }
+.window-controls span:nth-child(2) { background: #6a86ff; }
+.window-controls span:nth-child(3) { background: #002fff; }
+
+.photo-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #38bdf8;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.photo-toggle:hover {
+  background: #164e63;
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.photo-toggle:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.face-caption {
+  flex-shrink: 0;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-top: 1px solid #1e293b;
+  color: #94a3b8;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.65);
+}
+
+/* ---------- Front: ASCII terminal ---------- */
+
+.terminal-content {
+  flex: 1;
+  min-height: 0;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#terminalOutput {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  color: #38bdf8;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+#terminalOutput.cursor::after {
+  content: "_";
+  animation: blink 0.8s infinite;
+}
+
+/* Applied once the boot text is replaced by the ASCII portrait */
+#terminalOutput.ascii-photo {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: clamp(5px, 1.6vw, 7px);
+  font-family: monospace;
+  line-height: 1;
+  text-align: left;
+  white-space: pre;
+}
+
+@keyframes blink {
+  0%, 50%    { opacity: 1; }
+  51%, 100%  { opacity: 0; }
+}
+
+/* ---------- Back: real photo ---------- */
+
+.photo-frame {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #172b42 0%, #111827 70%);
+}
+
+.real-profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.5s ease 0.2s,
+    transform 0.5s ease 0.2s;
+}
+
+/* Fade the photo in once the window has been flipped */
+.code-window.is-flipped .real-profile-photo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.photo-overlay {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  background: rgba(11, 17, 32, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.photo-overlay span:first-child {
+  color: #38bdf8;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.photo-overlay span:last-child {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+/* ---------- Responsive & accessibility ---------- */
+
+@media (max-width: 600px) {
+  .flip-scene {
+    height: 400px;
+  }
+
+  .terminal-content {
+    padding: 16px 10px;
+  }
+
+  #terminalOutput {
+    font-size: clamp(9px, 2.5vw, 13px);
+    line-height: 1.5;
+  }
+
+  .photo-frame {
+    padding: 14px;
+  }
+
+  .photo-overlay {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .photo-toggle {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 500px) {
+  #terminalOutput.ascii-photo {
+    font-size: 4px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-window,
+  .real-profile-photo {
+    transition: none;
+  }
+}

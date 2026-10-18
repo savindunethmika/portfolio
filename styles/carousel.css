@@ -1,0 +1,89 @@
+/* =========================================================
+   MOBILE CARD CAROUSELS (skills, certificates, projects)
+   Load last: overrides the desktop grids in sections.css.
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .skills-container,
+  .certificate-container,
+  .projects-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    touch-action: pan-y pan-x; /* page scrolls vertically, cards swipe horizontally */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .skills-container::-webkit-scrollbar,
+  .certificate-container::-webkit-scrollbar,
+  .projects-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skills-container .skill-card,
+  .certificate-container .certificate-card,
+  .projects-container .project-card {
+    flex-shrink: 0;
+    min-width: 0;
+    scroll-snap-align: start;
+
+    /* No vertical reveal/hover movement inside a horizontal carousel:
+       cards would sit lower after a swipe or get clipped. */
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .skills-container .skill-card {
+    flex-basis: calc(100% - 45px);
+  }
+
+  .certificate-container .certificate-card,
+  .projects-container .project-card {
+    flex-basis: calc(100% - 35px);
+  }
+
+  /* ---------- Pagination dots ---------- */
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #334155;
+    cursor: pointer;
+    transition:
+      width 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .carousel-dot.active {
+    width: 22px;
+    border-radius: 10px;
+    background: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+  }
+}
+
+@media (min-width: 601px) {
+  .carousel-dots {
+    display: none;
+  }
+}

@@ -1,0 +1,93 @@
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(11, 17, 32, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #38bdf8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 10px #2ba0ff;
+}
+
+.menu-btn {
+  display: none;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 22px;
+}
+
+@media (max-width: 800px) {
+  .nav-links {
+    position: absolute;
+    top: -300px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid #1e293b;
+    background: #0b1120;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      top 0.4s ease,
+      opacity 0.4s ease;
+  }
+
+  .nav-links.active {
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 1001;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}

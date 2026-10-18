@@ -1,0 +1,106 @@
+/* =========================================================
+   INTRO SCREEN
+   ========================================================= */
+
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1120;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.intro-screen.hide {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.intro-content {
+  padding: 30px;
+  animation: introAnimation 1.5s ease;
+}
+
+.intro-welcome {
+  margin-bottom: 20px;
+  color: #38bdf8;
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+.intro-content h1 {
+  margin-bottom: 15px;
+  font-size: 55px;
+}
+
+.intro-content h1 span {
+  color: #38bdf8;
+}
+
+.intro-content h2 {
+  margin-bottom: 20px;
+  color: #94a3b8;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.intro-description {
+  margin-bottom: 35px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.intro-btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: #06101a;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-btn i {
+  margin-left: 8px;
+}
+
+.intro-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+}
+
+@keyframes introAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-content h1 {
+    font-size: 36px;
+  }
+
+  .intro-content h2 {
+    font-size: 19px;
+  }
+
+  .intro-welcome {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
