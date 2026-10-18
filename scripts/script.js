@@ -34,6 +34,7 @@ if (photoToggle && profileFlipCard) {
   });
 }
 
+document.getElementById('year').textContent = new Date().getFullYear();
 
 toggleMobileMenu();
 toggleIntroScreen();
