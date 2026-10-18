@@ -145,7 +145,7 @@ const projects = [
     id: 2,
     icon: 'shoppingCart',
     image: 'https://github.com/savindunethmika/savi_products/raw/main/images/preview.gif',
-    name: 'Amazon Clone',
+    name: 'Savi Products',
     description: 'An e-commerce website with shopping cart,  checkout and order tracking functionality.',
     languages: ['HTML', 'CSS', 'JavaScript'],
     source: 'https://github.com/savindunethmika/savi_products',
