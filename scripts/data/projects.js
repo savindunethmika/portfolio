@@ -143,13 +143,13 @@ const projects = [
   },
   {
     id: 2,
-    icon: 'amazon',
-    image: 'https://github.com/savindunethmika/amazon_clone/raw/main/images/preview.gif',
+    icon: 'shoppingCart',
+    image: 'https://github.com/savindunethmika/savi_products/raw/main/images/preview.gif',
     name: 'Amazon Clone',
     description: 'An e-commerce website with shopping cart,  checkout and order tracking functionality.',
     languages: ['HTML', 'CSS', 'JavaScript'],
-    source: 'https://github.com/savindunethmika/amazon_clone',
-    demo_link: 'https://savindunethmika-amazon-clone.pages.dev/'
+    source: 'https://github.com/savindunethmika/savi_products',
+    demo_link: 'https://savindunethmika-savi-products.pages.dev/'
   },
   {
     id: 3,
