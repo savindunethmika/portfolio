@@ -7,9 +7,20 @@ export function setupContactForm() {
   const status = document.getElementById('formStatus');
   const defaultLabel = submitButton.textContent;
 
+  let statusTimeout;
+
   const showStatus = (message, type) => {
-    status.textContent = message;
-    status.className = type;
+      clearTimeout(statusTimeout);
+
+      status.textContent = message;
+      status.className = type;
+
+      if (message) {
+          statusTimeout = setTimeout(() => {
+              status.textContent = '';
+              status.className = '';
+          }, 4000);
+      }
   };
 
   form.addEventListener('submit', async (event) => {
