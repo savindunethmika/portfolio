@@ -6,7 +6,7 @@ const BOOT_LINES = [
   '> INITIALIZING SYSTEM...',
   '> CONNECTING TO PORTFOLIO...',
   '> ACCESSING DEVELOPER DATA...',
-  '> ACCESS GRANTED..!'
+  '> ACCESS GRANTED !'
 ];
 
 /** Types a short boot sequence, then draws the ASCII portrait line by line. */
