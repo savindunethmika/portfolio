@@ -15,7 +15,7 @@ export const certificates = [
     org: 'SOUTHERN IRAA (PVT) LTD.',
     date: '2025 January 25,26',
     languages: ['HTML', 'CSS'],
-    link: '404.html'
+    link: 'page-does-not-exist'
   },
   {
     name: 'Creative Design',
