@@ -1,6 +1,7 @@
 import { startTerminalAnimation } from './terminalAnimation.js';
 
 const STORAGE_KEY = 'portfolioIntroSeen';
+const LOCK_CLASS = 'intro-active';
 const AUTO_HIDE_MS = 4000;
 const TERMINAL_DELAY_MS = 500;
 
@@ -29,7 +30,7 @@ export function setupIntroScreen() {
 
   const reveal = () => {
     introScreen.classList.add('hide');
-    document.body.style.overflowY = 'auto';
+    document.documentElement.classList.remove(LOCK_CLASS);
   };
 
   // Already seen in this tab: skip straight to the page.
@@ -51,7 +52,7 @@ export function setupIntroScreen() {
     setTimeout(startTerminalAnimation, TERMINAL_DELAY_MS);
   };
 
-  document.body.style.overflowY = 'hidden'; // no scrolling behind the overlay
+  document.documentElement.classList.add(LOCK_CLASS); // no scrolling behind the overlay
   enterButton.addEventListener('click', dismiss);
   autoHideTimer = setTimeout(dismiss, AUTO_HIDE_MS);
 }
