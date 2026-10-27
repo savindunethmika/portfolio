@@ -2,6 +2,12 @@
    INTRO SCREEN
    ========================================================= */
 
+/* Locks page scroll while the intro overlay is visible */
+html.intro-active,
+html.intro-active body {
+  overflow: hidden;
+}
+
 .intro-screen {
   position: fixed;
   top: 0;
