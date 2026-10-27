@@ -137,8 +137,8 @@
 }
 
 .window-controls span:nth-child(1) { background: #ffffff; }
-.window-controls span:nth-child(2) { background: #6a86ff; }
-.window-controls span:nth-child(3) { background: #002fff; }
+.window-controls span:nth-child(2) { background: #00b3ff; }
+.window-controls span:nth-child(3) { background: #0000ff; }
 
 .photo-toggle {
   display: inline-flex;
@@ -208,7 +208,7 @@
   height: 100%;
   max-width: 100%;
   overflow: hidden;
-  color: #38bdf8;
+  color: #f4f6f7;
   font-family: "Courier New", monospace;
   font-size: 15px;
   line-height: 1.8;
