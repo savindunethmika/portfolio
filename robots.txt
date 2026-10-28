@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://savindunethmika.pages.dev/sitemap.xml
+Sitemap: https://savindunethmika.pages.dev/sitemap-main.xml
