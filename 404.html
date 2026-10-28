@@ -123,7 +123,22 @@
     }
     footer a { color: #a8b7cc; text-underline-offset: 3px; }
     .footer-right { font-family: "DM Mono", monospace; }
+
     @media (min-width: 1200px) { .error-code { font-size: 18rem; } }
+
+    /* Desktop / laptop: original sizes kept, only the spacing is reduced */
+    @media (min-width: 761px) {
+      .topline { padding: 14px 0; }
+      main { padding: 6px 0 10px; gap: clamp(32px, 6vw, 80px); }
+      .error-code { margin-top: 4px; }
+      .error-visual-note { margin-top: 10px; }
+      .content { padding-top: 0; }
+      .mascot-wrap { margin-bottom: 8px; }
+      .description { margin-top: 10px; }
+      .error-log { margin-top: 14px; padding: 10px 16px; }
+      .actions { margin-top: 16px; }
+      footer { padding: 12px 0 14px; }
+    }
     @media (max-width: 760px) {
       .page { width: min(100% - 40px, 520px); }
       .topline { padding: 23px 0; }
