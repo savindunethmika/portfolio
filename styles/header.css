@@ -83,6 +83,7 @@ header {
     left: 0;
     opacity: 1;
     visibility: visible;
+    backdrop-filter: blur(10px);
   }
 
   .menu-btn {
