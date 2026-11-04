@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     icon: 'fa-solid fa-calculator',
-    image: 'images/projects/calculator.png',
+    image: 'https://github.com/savindunethmika/Calculator-js/raw/main/preview.png',
     name: 'Calculator App',
     description: 'A simple calculator application beautifully designed with basic arithmetic operations.',
     languages: ['HTML', 'CSS', 'JavaScript'],
