@@ -17,31 +17,31 @@ export const skills = [
   {
     name: 'MySQL',
     icon: 'devicon-mysql-plain-wordmark',
-    description: 'Designing and managing databases for web applications.'
+    description: 'Designing and managing relational databases for web applications.'
   },
   {
     name: 'JavaScript',
     icon: 'fa-brands fa-js',
-    description: 'Adding functionality and interactivity to websites.'
+    description: 'Adding dynamic functionality and interactivity to websites.'
   },
   {
     name: 'Python',
     icon: 'fa-brands fa-python',
-    description: 'Developing applications and programming projects.'
+    description: 'Building versatile software, scripts, and backend systems.'
   },
   {
     name: 'Java',
     icon: 'fa-brands fa-java',
-    description: 'Developing robust and scalable applications.'
+    description: 'Developing robust, enterprise-grade, and scalable applications.'
   },
   {
     name: 'C++',
     icon: 'devicon-cplusplus-plain',
-    description: 'Learning programming fundamentals and problem solving.'
+    description: 'Building high-performance, system-level, and compiled software.'
   },
   {
     name: 'C#',
     icon: 'devicon-csharp-plain',
-    description: 'Developing reliable software with object-oriented principles.'
+    description: 'Developing reliable software using object-oriented principles.'
   }
 ];
